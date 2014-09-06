@@ -245,11 +245,11 @@ var userDataDefault =
         });
       });
 
-        $("#click2begin").jqFloat({
-          width: 100,
-          height: 50,
-          speed: 1000
-        });
+      $("#click2begin").jqFloat({
+        width: 100,
+        height: 50,
+        speed: 1000
+      });
 
       // == ready to GO!  ===================
 
