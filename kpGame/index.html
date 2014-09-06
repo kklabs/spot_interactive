@@ -1,0 +1,88 @@
+
+<!--
+  // ********************************************************************
+  //
+  // HTML for KKLabs' taxibeacon Project
+  // Author: Geoffrey Wang
+  //
+  //
+  // ********************************************************************
+-->
+
+<!DOCTYPE html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Mobile App Meta-->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Site Properities -->
+  <title>lamigame</title>
+
+  <!-- Style Sheet: semantic-UI and local -->
+  <link rel="stylesheet" type="text/css" href="packaged/css/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="lamigame.css">
+
+  <!-- Javascript Lib: jQuery and plugins -->
+  <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+  <script src="jqfloat.min.js"></script>
+  
+  <!-- Javascript Lib: semantic-UI -->
+  <script src="packaged/javascript/semantic.min.js"></script>
+
+  <!-- Javascript Lib: kklabs -->
+  <script src="viaduct_essential_lib.js"></script>
+  <script src="spot_jsbelib.js"></script>
+
+
+
+  <script src="lamigame.js"></script>
+
+</head>
+<body>
+
+
+<!-- left content area -->
+<div id="mainArea" >
+
+    <div class="contentArea" id="mainTitle"></div>
+
+    <div class="contentArea msgbox" id="go2begin" style="display: none;"></div>
+    <div class="contentArea msgbox" id="click2begin" style="display: none;"></div>
+    <div class="contentArea msgbox" id="go2girl" style="display: none;"></div>
+
+    <div class="contentArea btnArea" id="btnStart" style="display: none;"></div>
+
+    <!--<canvas class="contentArea" id="effect" width="220" height="180" style="display: none;"></canvas>-->
+
+</div>
+
+<div id="initArea" >
+  <div id="progress">
+    <i class="huge loading icon"></i>
+  </div>
+</div>
+
+<div id="plzRotateArea" >
+  <div id="progress">
+    <i class="huge repeat icon"></i>
+  </div>
+</div>
+
+<div id="loadingArea" >
+<i class="huge loading icon"></i>
+</div>
+
+
+    <audio preload="none" id="audioChannel01" style="display: none"> 
+    </audio>
+
+
+</body>
+
+</html>

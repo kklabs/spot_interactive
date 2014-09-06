@@ -1,0 +1,327 @@
+ 
+
+  /* **************************************************************************
+
+  // CSS for readmoolove Project
+  // Author: Geoffrey Wang
+
+		
+   ************************************************************************** */
+
+ /* ************************************************************************** */
+ /*
+              Global
+ */
+ /* ************************************************************************** */
+
+html,
+
+* {
+  outline: none;
+  font-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  appearance:normal;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius:0px;
+  -webkit-border-radius:0px;
+  -moz-border-radius:0px;
+  -webkit-tap-highlight-color: transparent;
+
+}
+*:focus {
+  outline: none;
+}
+
+body {
+  height: 100%;
+  font-family: "Dosis", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 12px;
+  margin: 0px;
+  padding: 0px;
+  color: #555555;
+  text-rendering: optimizeLegibility;
+  min-width: 320px;
+  overflow: hidden;
+  background-image: url(img/bg_light.png);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+
+}
+
+ /* ************************************************************************** */
+ /*
+              App Components
+ */
+ /* ************************************************************************** */
+
+/*******************************
+       framework
+*******************************/
+
+#topStampSensorArea
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+
+}
+
+#mainArea
+{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+#msgbox
+{
+
+}
+
+#mainTitle
+{
+  position: absolute;
+  background-image: url(img/title_light.png);
+  background-repeat: no-repeat;
+  height: 93px;
+  width: 293px;
+  background-size: 293px 93px;
+}
+
+.msgbox
+{
+  position: absolute;
+  background-repeat: no-repeat;
+  height: 308px;
+  width: 293px;
+  background-size: 293px 308px;
+}
+
+#go2begin
+{
+  background-image: url(img/wanted_a.png);
+}
+
+#click2begin
+{
+  background-image: url(img/wanted_b.png);
+}
+
+#go2girl
+{
+  background-image: url(img/wanted_c.png);
+}
+
+.btnArea
+{
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+#btnStart
+{
+  height: 142px;
+  width: 49px;
+  background-size: 142px 49px;
+  background-image: url(img/start_light.png);
+}
+
+
+.contentArea
+{
+    position: absolute;
+}
+
+#ticketResult
+{
+  background-image: url(img/lottery.png);
+  background-repeat: no-repeat;
+  left: 5%;
+  top: 5%;
+  height: 409px;
+  width: 298px;
+  background-size: 298px 409px;
+}
+
+
+#plzRotateArea {
+  position:fixed;
+  z-index:2500;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#fff; 
+  z-index:9999; 
+}
+
+#initArea {
+  position:fixed;
+  z-index:2500;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#fff; 
+  z-index:9999; 
+}
+
+#progress {
+  position:fixed;
+  z-index:9999;
+  width:70px;
+  height:70px;
+  position:absolute;
+  left:50%; 
+  top:50%; 
+  margin:-35px 0 0 -35px; 
+}
+
+#loadingArea {
+  display: none;
+  position:fixed;
+  z-index:9999;
+  width:250px;
+  height:250px;
+  left:50%; 
+  top:25%;
+  text-align: center;
+  padding-top: 30vh;
+  margin:-125px 0 0 -125px; 
+}
+
+.ui.label.tabShow
+{
+  font-size: 0.9em !important;
+}
+ /* ************************************************************************** */
+ /*
+              App Components: sementic-UI Overrides;
+ */
+ /* ************************************************************************** */
+
+
+.ui.items .item > .content > .name
+{
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 0.8em;
+  width: 100px;
+}
+
+.ui.table td.sharelink
+{
+  vertical-align: middle !important;
+}
+
+i.icon.up
+{ 
+   width: 1.23em;
+   margin: 0px !important;
+}
+
+
+.ui.relaxed.grid
+{
+  margin: 0px -12px !important;
+}
+
+.ui.bottom.right.popup {
+  margin-left: -5em;
+}
+
+.ui.popup {
+  font-size: 1rem;
+  z-index: 99999;
+}
+
+.ui.menu
+{
+    border-radius: 0;
+
+}
+
+.ui.label
+{
+  font-size: 0.75em !important;
+}
+
+.ui.vertical.menu .item > .menu > .item
+{
+  padding: 1rem 1.5rem !important;
+
+}
+
+
+ /* ************************************************************************** */
+ /*
+              sementic-UI Overrides (MAY NOT IN USE)
+ */
+ /* ************************************************************************** */
+
+.ui.right.labeled.icon.button .left.icon
+{
+  left: 0em;
+  right: auto;
+}
+
+.ui.table td
+{
+  vertical-align: top;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.ui.table td:first-child {
+  font-weight: normal !important;
+}
+
+
+.ui.header,
+h1,
+h2 {
+  font-weight: normal !important;
+}
+
+h1.ui.header {
+  font-size: 3em;
+}
+
+h4.ui.header,
+h5.ui.header,
+.ui.icon.header {
+  font-weight: bold !important;
+}
+
+.ui.button {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+a {
+  color: #009FDA;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00BAFF;
+}
+
+p a {
+  font-weight: bold;
+}
+
