@@ -149,7 +149,14 @@ var userDataDefault =
   function gameStart()
   {
     hideAll();
-    $("#click2begin").fadeIn();
+    $("#click2begin").show();
+
+    $("#click2begin").jqFloat({
+        width: 100,
+        height: 50,
+        speed: 1000
+     });
+
     userData.gameProcessStep=1;
   }
 
@@ -245,11 +252,6 @@ var userDataDefault =
         });
       });
 
-      $("#click2begin").jqFloat({
-        width: 100,
-        height: 50,
-        speed: 1000
-      });
 
       // == ready to GO!  ===================
 
