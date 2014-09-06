@@ -158,6 +158,10 @@ var userDataDefault =
     $("#kpTalk").fadeIn();
     updateKpTalkContent();
 
+    $("#btnReStart").fadeIn();
+    
+
+
   }
 
   function updateKpTalkContent()
@@ -168,7 +172,7 @@ var userDataDefault =
     var selectedPost = Math.floor(posts.length * Math.random());
 
     if(selectedPost>=0 && selectedPost<posts.length)
-      $("#kpTalk").html(posts[selectedPost].plain_content);
+      $("#kpTalk").html("<h2>"+posts[selectedPost].plain_content+"</h2><p>"+posts[selectedPost].plain_content+"</p>");
 
   }
 
