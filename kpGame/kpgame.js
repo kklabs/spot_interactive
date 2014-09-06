@@ -177,6 +177,8 @@ var userDataDefault =
   function showByGameStatus()
   {
     // STEP 0: before game begin
+    console.log("showByGameStatus="+KPDistance);
+
     if(userData.gameProcessStep==0)
     {
       showBeginPoint();
