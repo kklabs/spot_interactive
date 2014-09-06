@@ -107,6 +107,9 @@ body {
   height: 308px;
   width: 293px;
   background-size: 293px 308px;
+  padding: 50px 50px 50px 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 
@@ -118,8 +121,8 @@ body {
 #kpTalk
 {
   background-image: url(img/kp02.png);
-  text-overflow: ellipsis;
-  padding: 100px 50px 200px 20px;
+
+  
 }
 
 #kpTalk h2
