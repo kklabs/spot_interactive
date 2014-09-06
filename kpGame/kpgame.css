@@ -144,7 +144,8 @@ body {
   overflow-y: scroll; 
   -webkit-overflow-scrolling: touch;
   width:auto; 
-  height:178px;
+  height:158px;
+  margin-top: 20px;
 }
 
 .btnArea

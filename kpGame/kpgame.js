@@ -168,7 +168,7 @@ var userDataDefault =
 
     $("#btnReStart").fadeIn();
     
-
+    userData.gameProcessStep=2;
 
   }
 
