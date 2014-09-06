@@ -88,7 +88,7 @@ var userDataDefault =
           $("#mainTitle").css("background-size", (oriWidth* scale) +"px "+(oriHeight* scale) +"px");
 
           $(".msgbox").css("width", ((oriWidth1-100)* scale)+"px" );
-          $(".msgbox").css("height", ((oriHeight1-100)* scale)+"px" );
+          $(".msgbox").css("height", ((oriHeight1-130)* scale)+"px" );
           $(".msgbox").css("top",  ($(window).height()-(415* scale))/3+oriHeight* scale +"px");
           $(".msgbox").css("left", ($(window).width()-(oriWidth1* scale))/2 +"px");
           $(".msgbox").css("background-size", (oriWidth1* scale) +"px "+(oriHeight1* scale) +"px");
@@ -98,10 +98,10 @@ var userDataDefault =
           oriWidth = 142;
           oriHeight = 49;
 
-          $("#btnStart").css("width", (oriWidth* scale)+"px" );
-          $("#btnStart").css("height", (oriHeight* scale)+"px" );
-          $("#btnStart").css("background-size", (oriWidth* scale) +"px "+(oriHeight* scale) +"px");
-          $("#btnStart").css("left", ($(window).width()-(oriWidth* scale))/2 +"px");
+          $("#btnStart, #btnReStart").css("width", (oriWidth* scale)+"px" );
+          $("#btnStart, #btnReStart").css("height", (oriHeight* scale)+"px" );
+          $("#btnStart, #btnReStart").css("background-size", (oriWidth* scale) +"px "+(oriHeight* scale) +"px");
+          $("#btnStart, #btnReStart").css("left", ($(window).width()-(oriWidth* scale))/2 +"px");
 
         }
     }

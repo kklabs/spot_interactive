@@ -107,7 +107,7 @@ body {
   height: 308px;
   width: 293px;
   background-size: 293px 308px;
-  padding: 50px 50px 50px 50px;
+  padding: 50px 50px 80px 50px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -128,14 +128,14 @@ body {
 #kpTalk h2
 {
   color: orange;
-  font-size: 3em;
+  font-size: 1.5em;
 }
 
 #kpTalk p
 {
-  color: #ccc;
+  color: black;
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.2em;
 }
 
 .btnArea
