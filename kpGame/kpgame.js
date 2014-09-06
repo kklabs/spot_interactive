@@ -79,7 +79,6 @@ var userDataDefault =
           var oriWidth1 = 293;
           var oriHeight1 = 308;
 
-
           $("body").css("font-size", (12* scale)+"px" );
 
           $("#mainTitle").css("width", (oriWidth* scale)+"px" );
@@ -104,33 +103,9 @@ var userDataDefault =
           $("#btnStart").css("background-size", (oriWidth* scale) +"px "+(oriHeight* scale) +"px");
           $("#btnStart").css("left", ($(window).width()-(oriWidth* scale))/2 +"px");
 
-          updateTitleBgAni();
         }
     }
 
-    var titleAniCounter=0;
-
-    function updateTitleBgAni()
-    {
-      if(titleAniCounter==0)
-      {
-        // initial postion
-        $("#titleArea").css("background-position","0px 0px");
-        titleAniCounter++;
-      }
-      else if(titleAniCounter==80)
-      {
-        $("#titleArea").css("background-position",(titleAniCounter*-1)+"px "+(titleAniCounter*-1)+"px");
-        titleAniCounter=0;
-      }
-      else
-      {
-        $("#titleArea").css("background-position",(titleAniCounter*-1)+"px "+(titleAniCounter*-1)+"px");
-        titleAniCounter++
-      }
-
-      setTimeout(updateTitleBgAni,100)
-    }
 
     var orientModeValue=0;
     
@@ -154,23 +129,14 @@ var userDataDefault =
     }
 
   var beaconManager=new spotJsBEL();
-
-  var isReceivedGameStart = false;
-  var isInArea=[false,false,false,false,false,false,false];
+      var API_SERVER = "http://api.kptaipei.tw/v1/";
+      var posts = [];
 
   // STEP 0 --  before game begin
-
   function hideAll()
   {
       $(".msgbox").hide();
       $(".btnArea").hide();    
-  }
-
-  function showGoBeginPoint()
-  {
-    hideAll();
-    $("#go2begin").fadeIn();
-
   }
 
   function showBeginPoint()
@@ -180,20 +146,46 @@ var userDataDefault =
     $("#btnStart").fadeIn();
   }
 
+  function gameStart()
+  {
+    hideAll();
+    userData.gameProcessStep=1;
+  }
+
+  function showKPTalk()
+  {
+    hideAll();
+    $("#kpTalk").fadeIn();
+    updateKpTalkContent();
+
+  }
+
+  function updateKpTalkContent()
+  {
+    if(posts.length==0)
+      return;
+
+    var selectedPost = Math.floor(posts.length * Math.random());
+
+    if(selectedPost>=0 && selectedPost<posts.length)
+      $("#kpTalk").html(posts[selectedPost].plain_content);
+
+  }
+
+  var KPDistance=0;
+
   function showByGameStatus()
   {
     // STEP 0: before game begin
     if(userData.gameProcessStep==0)
     {
-      if(isInArea[0]==false)
-      {
-        showGoBeginPoint();
-      }
-      else
-      {
-        showBeginPoint();
-      }
+      showBeginPoint();
     }
+    else if(userData.gameProcessStep==1 && (KPDistance==1 || KPDistance==2) )
+    {
+      showKPTalk();
+    }
+
     
   }
 
@@ -201,98 +193,18 @@ var userDataDefault =
 
     console.log("beaconManager.isBLESupport()="+beaconManager.isBLESupport());
 
-    var fgReceivedGameStart = false;
-    var fgInArea=[false,false,false,false,false,false,false];
+    KPDistance=0;
 
     for(var j=0;j<beaconData.length;j++) 
     {    
         console.log("beacon received:"+beaconData[j].name+" px="+beaconData[j].px);
 
-        if( (beaconData[j].px==1 || beaconData[j].px==2  ) )
+        if(beaconData[j].name=="KP")
         {
-            if(beaconData[j].name=="gameSPGo")
-            {
-              fgReceivedGameStart=true;
-            }
-            else if(beaconData[j].name=="gameSP")
-            {
-              fgInArea[0]=true;
-            }
-            else if(beaconData[j].name=="gameP1")
-            {
-              fgInArea[1]=true;
-            }
-            else if(beaconData[j].name=="gameP2")
-            {
-              fgInArea[2]=true;
-            }
-            else if(beaconData[j].name=="gameP3")
-            {
-              fgInArea[3]=true;
-            }
-            else if(beaconData[j].name=="gameP4")
-            {
-              fgInArea[4]=true;
-            }
-            else if(beaconData[j].name=="gameP5")
-            {
-              fgInArea[5]=true;
-            }
-            else if(beaconData[j].name=="gameP6")
-            {
-              fgInArea[6]=true;
-            }
-            
-            
-        }
-        else if (beaconData[j].px==0 || beaconData[j].px==3 )
-        {
-            if(beaconData[j].name=="gameSPGo")
-            {
-              fgReceivedGameStart=false;
-            }
-            else if(beaconData[j].name=="gameSP")
-            {
-              fgInArea[0]=false;
-            }
-            else if(beaconData[j].name=="gameP1")
-            {
-              fgInArea[1]=false;
-            }
-            else if(beaconData[j].name=="gameP2")
-            {
-              fgInArea[2]=false;
-            }
-            else if(beaconData[j].name=="gameP3")
-            {
-              fgInArea[3]=false;
-            }
-            else if(beaconData[j].name=="gameP4")
-            {
-              fgInArea[4]=false;
-            }
-            else if(beaconData[j].name=="gameP5")
-            {
-              fgInArea[5]=false;
-            }
-            else if(beaconData[j].name=="gameP6")
-            {
-              fgInArea[6]=false;
-            }
-
+          fgKPDistance = beaconData[j].px;
         }
 
     }
-
-    isReceivedGameStart = fgReceivedGameStart;
-
-    isInArea[0] = fgInArea[0];
-    isInArea[1] = fgInArea[1];
-    isInArea[2] = fgInArea[2];
-    isInArea[3] = fgInArea[3];
-    isInArea[4] = fgInArea[4];
-    isInArea[5] = fgInArea[5];
-    isInArea[6] = fgInArea[6];
 
     showByGameStatus();
 
@@ -318,6 +230,15 @@ var userDataDefault =
       else 
         userData = JSON.parse(beaconTicketUserDataPlain); 
       
+
+      $.get(API_SERVER+"category/40?accessToken=kp53f56da91f5506.26519937",function(results){
+
+        $.each(results.data,function(ind,item){
+          posts.push(item);
+        });
+      });
+
+
       // == ready to GO!  ===================
 
       $("#initArea").fadeOut();
@@ -334,15 +255,6 @@ var userDataDefault =
         showByGameStatus();
         
       }
-
-      /*
-      if(  navigator.userAgent.search('Android')!=-1 || navigator.userAgent.search('iPhone')!=-1 || navigator.userAgent.search('iPad')!=-1  )
-      {
-        location.href="viaduct://xcall?portaBeaconAPI.setAutoTriggerForceDisable(true);portaBeaconAPI.setCustomUserId('aaa')";
-      }
-      // Disable console log for production
-      */
-
       /*
   
       window.console = {

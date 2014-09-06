@@ -109,17 +109,13 @@ body {
   background-size: 293px 308px;
 }
 
-#go2begin
+
+#click2begin
 {
   background-image: url(img/wanted_a.png);
 }
 
-#click2begin
-{
-  background-image: url(img/wanted_b.png);
-}
-
-#go2girl
+#kpTalk
 {
   background-image: url(img/wanted_c.png);
 }
