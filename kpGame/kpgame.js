@@ -172,7 +172,7 @@ var userDataDefault =
     var selectedPost = Math.floor(posts.length * Math.random());
 
     if(selectedPost>=0 && selectedPost<posts.length)
-      $("#kpTalk").html("<h2>"+posts[selectedPost].plain_content+"</h2><p>"+posts[selectedPost].plain_content+"</p>");
+      $("#kpTalk").html("<h2>"+posts[selectedPost].title+"</h2><p>"+posts[selectedPost].plain_content+"</p>");
 
   }
 
