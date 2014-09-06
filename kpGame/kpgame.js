@@ -203,7 +203,7 @@ var userDataDefault =
 
         if(beaconData[j].name=="KP")
         {
-          fgKPDistance = beaconData[j].px;
+          KPDistance = beaconData[j].px;
         }
 
     }
