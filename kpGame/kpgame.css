@@ -45,7 +45,7 @@ body {
   text-rendering: optimizeLegibility;
   min-width: 320px;
   overflow: hidden;
-  background-image: url(img/bg_light.png);
+  background-image: url(img/game01_bg.png);
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
 
@@ -93,10 +93,10 @@ body {
 #mainTitle
 {
   position: absolute;
-  background-image: url(img/title_light.png);
+  background-image: url(img/game01_title.png);
   background-repeat: no-repeat;
-  height: 93px;
-  width: 293px;
+  height: 102px;
+  width: 320px;
   background-size: 293px 93px;
 }
 
@@ -112,12 +112,14 @@ body {
 
 #click2begin
 {
-  background-image: url(img/wanted_a.png);
+  background-image: url(img/kp01.png);
 }
 
 #kpTalk
 {
-  background-image: url(img/wanted_c.png);
+  background-image: url(img/kp02.png);
+  text-overflow: ellipsis;
+  padding-top: 30px;
 }
 
 .btnArea
@@ -131,9 +133,16 @@ body {
   height: 142px;
   width: 49px;
   background-size: 142px 49px;
-  background-image: url(img/start_light.png);
+  background-image: url(img/game01_start.png);
 }
 
+#btnReStart
+{
+  height: 142px;
+  width: 49px;
+  background-size: 142px 49px;
+  background-image: url(img/game01_restart.png);
+}
 
 .contentArea
 {
