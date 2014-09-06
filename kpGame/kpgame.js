@@ -182,6 +182,8 @@ var userDataDefault =
     if(selectedPost>=0 && selectedPost<posts.length)
       $("#contentInner").html("<h2>"+posts[selectedPost].title+"</h2><p>"+posts[selectedPost].content+"</p>");
 
+    $("#contentInner iframe").hide();
+
   }
 
   var KPDistance=0;
