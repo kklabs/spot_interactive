@@ -12,6 +12,11 @@
 <!-- Latest compiled and minified JavaScript -->
 <script type="text/javascript" src="jquery.spritely.js"></script>
 
+  <!-- Style Sheet: semantic-UI and local -->
+  <link rel="stylesheet" type="text/css" href="packaged/css/semantic.min.css">
+
+  <!-- Javascript Lib: semantic-UI -->
+  <script src="packaged/javascript/semantic.min.js"></script>
 
 <script type="text/javascript">
 var title = new Array();
@@ -72,6 +77,20 @@ $(document).ready(function(){
 
 });
 </script>
+
+<style>
+	#introArea
+	{
+		width: 100vw; 
+		text-align: center;
+		height: 30vh;
+		margin-top: 358px;
+		padding-top: 50px; 
+		line-height: 50px;
+	}
+
+</style>
+
 </head>
 <body>
 <div id="stage" class="stage">
@@ -81,6 +100,12 @@ $(document).ready(function(){
 	<div id="hill1" class="stage"></div>       
 
 	<div id="man"></div>
+
+</div>
+
+<div id="introArea">
+
+	<a class="ui teal button" href="index_beacon.html">進入遊戲 (Mobile Only)</a> <a class="ui teal button" href="https://github.com/kklabs/spot_interactive/tree/master/kpGame"><i class="github icon"></i>檢視原始碼</a>
 
 </div>
 

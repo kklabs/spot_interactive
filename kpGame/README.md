@@ -10,6 +10,11 @@ KP跑跑薑餅人
 沒有beacon的使用者，可以從網站上看到柯P跑跑薑餅人，跑跑過程中，柯P薑餅人吃掉的都是政見糖果，遊戲結束後，會眺出剛剛遊戲中吃掉的糖果，每一種糖果都是不同內容的【柯P新政】，可以點選閱讀更多。
 
 授權方式：CC
+
+Demo: [https://event.spot.ms/ideaSpace/kpGame/index.html]
+
 使用資料：從API取得 [柯P新政] 資料
+
 API來源： http://unlimited.kptaipei.tw/
+
 使用iBeacon開發平台: http://www.spot.ms
