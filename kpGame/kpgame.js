@@ -63,18 +63,26 @@ var userDataDefault =
     function adjustMainAreaSize()
     {
 
+        var targetWidth=0;
+
         if($(window).width()>$(window).height())
         {
-          $("#plzRotateArea").fadeIn();
+          // $("#plzRotateArea").fadeIn();
+
+          $("#mainArea").css("width","320px");
+          $("#mainArea").css("margin","0 auto");
+
+          targetWidth = 320;
         }
-        else
-        {
-          $("#plzRotateArea").fadeOut();
+        else 
+          targetWidth = $(window).width();
+
+          // $("#plzRotateArea").fadeOut();
 
           var oriWidth = 293;
           var oriHeight = 93;
 
-          var scale = $(window).width()/320;
+          var scale = targetWidth/320;
 
           var oriWidth1 = 293;
           var oriHeight1 = 308;
@@ -84,13 +92,13 @@ var userDataDefault =
           $("#mainTitle").css("width", (oriWidth* scale)+"px" );
           $("#mainTitle").css("height", (oriHeight* scale)+"px" );
           $("#mainTitle").css("top",  ($(window).height()-415*scale)/3 +"px");
-          $("#mainTitle").css("left", ($(window).width()-(oriWidth* scale))/2 +"px");
+          $("#mainTitle").css("left", (targetWidth-(oriWidth* scale))/2 +"px");
           $("#mainTitle").css("background-size", (oriWidth* scale) +"px "+(oriHeight* scale) +"px");
 
           $(".msgbox").css("width", ((oriWidth1-100)* scale)+"px" );
           $(".msgbox").css("height", ((oriHeight1-130)* scale)+"px" );
           $(".msgbox").css("top",  ($(window).height()-(415* scale))/3+oriHeight* scale +"px");
-          $(".msgbox").css("left", ($(window).width()-(oriWidth1* scale))/2 +"px");
+          $(".msgbox").css("left", (targetWidth-(oriWidth1* scale))/2 +"px");
           $(".msgbox").css("background-size", (oriWidth1* scale) +"px "+(oriHeight1* scale) +"px");
 
           $(".btnArea").css("top",  ($(window).height()-(415* scale))/4+((oriHeight+oriHeight1)* scale) +"px");
@@ -101,9 +109,9 @@ var userDataDefault =
           $("#btnStart, #btnReStart").css("width", (oriWidth* scale)+"px" );
           $("#btnStart, #btnReStart").css("height", (oriHeight* scale)+"px" );
           $("#btnStart, #btnReStart").css("background-size", (oriWidth* scale) +"px "+(oriHeight* scale) +"px");
-          $("#btnStart, #btnReStart").css("left", ($(window).width()-(oriWidth* scale))/2 +"px");
+          $("#btnStart, #btnReStart").css("left", (targetWidth-(oriWidth* scale))/2 +"px");
 
-        }
+        
     }
 
 
@@ -249,7 +257,7 @@ var userDataDefault =
       */
 
       userData = userDataDefault;
-      
+
       $.get(API_SERVER+"category/40?accessToken=kp53f56da91f5506.26519937",function(results){
 
         $.each(results.data,function(ind,item){
