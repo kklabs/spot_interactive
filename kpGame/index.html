@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+<title>KP Demo01</title>
+
+<link rel="stylesheet" type="text/css" href="css/smg.layout.css">
+
+<script src="jquery-2.1.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="jquery.spritely.js"></script>
+
+
+<script type="text/javascript">
+var title = new Array();
+$.get("http://api.kptaipei.tw/v1/category/40",function(res){
+	for(var i=0; i<res.data.length; i++){
+		title.push(res.data[i].title);
+	}
+});
+$(document).ready(function(){
+	$('#clouds').pan({fps: 30, speed: 0.7, dir: 'left', depth: 10});
+	$('#hill2').pan({fps: 30, speed: 2, dir: 'left', depth: 30});
+	$('#hill1').pan({fps: 30, speed: 3, dir: 'left', depth: 70});
+	$('#hill1, #hill2, #clouds').spRelSpeed(8);
+	$('#man').sprite({fps: 9, no_of_frames: 2});
+
+	var clickLock = false;
+	var i = 0;
+	var ct = setInterval(function(){
+		var y1 = $("#man").css("bottom");
+		console.log($(".candy").index());
+		// for(var i=0; i<$(".candy").index(); i++){
+
+		// }
+	},1000);
+
+	$("body").click(function(){
+		if (!clickLock){
+			clickLock = true;
+			$("#man").animate({"bottom":"150px"},500,function(){
+				$("#man").animate({"bottom":"20px"},500,function(){
+					clickLock = false;
+				});
+			})
+		}
+	});
+
+	document.body.addEventListener('touchstart', function(e){
+		if (!clickLock){
+			clickLock = true;
+			$("#man").animate({"bottom":"150px"},500,function(){
+				$("#man").animate({"bottom":"20px"},500,function(){
+					clickLock = false;
+				});
+			})	
+		}
+	}, false);
+
+	var t = setInterval(function(){
+		var topPos = Math.random()*250+50;
+		var num = Math.floor(Math.random()*title.length);
+		var word = title[num].replace("【柯P新政】","");
+		$("#stage").append("<div class='candy c"+i+"'>"+word+"</div>");
+		$(".c"+i).css({"right":"-20%","top":topPos+"px"}).animate({"right":"100%"},6000,"linear",function(){
+			$(".c"+i).remove();
+		});
+		i++;
+	},2000)
+
+});
+</script>
+</head>
+<body>
+<div id="stage" class="stage">
+	<div id="bg" class="stage"></div>
+	<div id="clouds" class="stage"></div>
+	<div id="hill2" class="stage"></div>
+	<div id="hill1" class="stage"></div>       
+
+	<div id="man"></div>
+
+</div>
+
+</body>
+</html>
