@@ -238,6 +238,7 @@ var userDataDefault =
       adjustMainAreaSize();
       
       // check local storage
+      /*
       
       var beaconTicketUserDataPlain = window.localStorage.getItem('beaconGameData');
 
@@ -245,8 +246,10 @@ var userDataDefault =
         userData = userDataDefault;
       else 
         userData = JSON.parse(beaconTicketUserDataPlain); 
-      
+      */
 
+      userData = userDataDefault;
+      
       $.get(API_SERVER+"category/40?accessToken=kp53f56da91f5506.26519937",function(results){
 
         $.each(results.data,function(ind,item){
