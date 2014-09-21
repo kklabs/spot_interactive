@@ -374,8 +374,8 @@ var userDataDefault =
   // show lottry ticket result
 
   var prizeText1 = ["殘念！","恭喜得獎！"];
-  var prizeText2 = ["請繼續支持Lamigo!","請於本日球賽結束前，"];
-  var prizeText3 = ["下次幸運兒就是你。","至入口處活動服務台兌換。"];
+  var prizeText2 = ["請繼續支持!","請於本日活動結束前，"];
+  var prizeText3 = ["下次幸運兒就是你。","至活動服務台兌換。"];
 
   function updateTicketContent()
   {
