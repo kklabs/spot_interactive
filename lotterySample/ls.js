@@ -216,11 +216,11 @@ var userDataDefault =
 
         if( (beaconData[j].px==1 || beaconData[j].px==2 || beaconData[j].px==3 ) )
         {
-            if(beaconData[j].name=="flyingInArea")
+            if(beaconData[j].name=="lotteryInArea")
             {
               fgReceivedFlying=true;
             }
-            else if(beaconData[j].name=="flyingStopArea")
+            else if(beaconData[j].name=="lotteryStopArea")
             {
               fgReceivedStopArea=true;
             }
@@ -228,11 +228,11 @@ var userDataDefault =
         }
         else if (beaconData[j].px==0 )
         {
-            if(beaconData[j].name=="flyingInArea")
+            if(beaconData[j].name=="lotteryInArea")
             {
               fgReceivedFlying=false;
             }
-            else if(beaconData[j].name=="flyingStopArea")
+            else if(beaconData[j].name=="lotteryStopArea")
             {
               fgReceivedStopArea=false;
             }
