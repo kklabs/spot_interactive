@@ -1,0 +1,371 @@
+ 
+
+  /* **************************************************************************
+
+  //
+  // CSS File for KKlabs' SPOT Beacon Lottery Sample 
+  // Author: Geoffrey Wang
+  //
+  //  This sample code is under Apache License, Version 2.0 , 
+  //    http://www.apache.org/licenses/LICENSE-2.0 
+  //
+  //  Please refer to http://www.spot.ms for detail of using SPOT Beacon.
+  //
+		
+ ************************************************************************** */
+
+ /* ************************************************************************** */
+ /*
+              Global
+ */
+ /* ************************************************************************** */
+
+html,
+
+* {
+  outline: none;
+  font-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  appearance:normal;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius:0px;
+  -webkit-border-radius:0px;
+  -moz-border-radius:0px;
+  -webkit-tap-highlight-color: transparent;
+
+}
+*:focus {
+  outline: none;
+}
+
+body {
+  height: 100%;
+  font-family: "Dosis", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 12px;
+  margin: 0px;
+  padding: 0px;
+  color: #555555;
+  text-rendering: optimizeLegibility;
+  min-width: 320px;
+  overflow: hidden;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+
+}
+
+ /* ************************************************************************** */
+ /*
+              App Components
+ */
+ /* ************************************************************************** */
+
+/*******************************
+       framework
+*******************************/
+
+#topStampSensorArea
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+
+}
+
+#mainArea
+{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(img/bg.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+
+#mainTitle
+{
+  position: absolute;
+  background-image: url(img/title.png);
+  background-repeat: no-repeat;
+  height: 138px;
+  width: 299px;
+  background-size: 299px 138px;
+}
+
+#mainMessage
+{
+  position: absolute;
+  background-image: url(img/instruction.png);
+  background-repeat: no-repeat;
+  height: 245px;
+  width: 244px;
+  background-size: 245px 244px;
+}
+
+.contentArea
+{
+    position: absolute;
+}
+
+.snowflakes {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    width:50px;
+    height:50px;
+    background-repeat: none;
+}
+
+.ttype0
+{
+  background-image: url(img/lottery00.png);
+}
+
+.ttype1
+{
+  background-image: url(img/lottery01.png);
+}
+
+.ttype2
+{
+  background-image: url(img/lottery02.png);
+}
+
+.ttype3
+{
+  background-image: url(img/lottery03.png);
+}
+
+.ttype4
+{
+  background-image: url(img/lottery04.png);
+}
+
+.ttype4
+{
+  background-image: url(img/lottery04.png);
+}
+
+#ticketResult
+{
+  background-image: url(img/lottery.png);
+  background-repeat: no-repeat;
+  left: 5%;
+  top: 5%;
+  height: 409px;
+  width: 298px;
+  background-size: 298px 409px;
+}
+
+#ticketResultText
+{
+  padding: 15px;
+  color: white;
+}
+
+#ticketResultText h2
+{
+  margin: 0em 0em 0.1em 0em;
+  font-size: 3.5em;
+}
+
+#ticketResultText p
+{
+  margin: 0em 0 0.1em 1em;
+  font-size: 1.2em;
+}
+
+
+#ticketResultText h4
+{
+  margin: 3.5em 0 0.5em 0em;
+  font-size: 1em;
+  color: orange;
+}
+
+
+#ticketTop
+{
+  z-index: 999;
+}
+
+#plzRotateArea {
+  position:fixed;
+  z-index:2500;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#fff; 
+  z-index:9999; 
+}
+
+#initArea {
+  position:fixed;
+  z-index:2500;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#fff; 
+  z-index:9999; 
+}
+
+#progress {
+  position:fixed;
+  z-index:9999;
+  width:70px;
+  height:70px;
+  position:absolute;
+  left:50%; 
+  top:30%; 
+  margin:-35px 0 0 -35px; 
+}
+
+#loadingArea {
+  display: none;
+  position:fixed;
+  z-index:9999;
+  width:250px;
+  height:250px;
+  left:50%; 
+  top:25%;
+  text-align: center;
+  padding-top: 30vh;
+  margin:-125px 0 0 -125px; 
+}
+
+.ui.label.tabShow
+{
+  font-size: 0.9em !important;
+}
+ /* ************************************************************************** */
+ /*
+              App Components: sementic-UI Overrides;
+ */
+ /* ************************************************************************** */
+
+
+.ui.items .item > .content > .name
+{
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 0.8em;
+  width: 100px;
+}
+
+.ui.table td.sharelink
+{
+  vertical-align: middle !important;
+}
+
+i.icon.up
+{ 
+   width: 1.23em;
+   margin: 0px !important;
+}
+
+
+.ui.relaxed.grid
+{
+  margin: 0px -12px !important;
+}
+
+.ui.bottom.right.popup {
+  margin-left: -5em;
+}
+
+.ui.popup {
+  font-size: 1rem;
+  z-index: 99999;
+}
+
+.ui.menu
+{
+    border-radius: 0;
+
+}
+
+.ui.label
+{
+  font-size: 0.75em !important;
+}
+
+.ui.vertical.menu .item > .menu > .item
+{
+  padding: 1rem 1.5rem !important;
+
+}
+
+
+ /* ************************************************************************** */
+ /*
+              sementic-UI Overrides (MAY NOT IN USE)
+ */
+ /* ************************************************************************** */
+
+.ui.right.labeled.icon.button .left.icon
+{
+  left: 0em;
+  right: auto;
+}
+
+.ui.table td
+{
+  vertical-align: top;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.ui.table td:first-child {
+  font-weight: normal !important;
+}
+
+
+.ui.header,
+h1,
+h2 {
+  font-weight: normal !important;
+}
+
+h1.ui.header {
+  font-size: 3em;
+}
+
+h4.ui.header,
+h5.ui.header,
+.ui.icon.header {
+  font-weight: bold !important;
+}
+
+.ui.button {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+a {
+  color: #009FDA;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00BAFF;
+}
+
+p a {
+  font-weight: bold;
+}
+

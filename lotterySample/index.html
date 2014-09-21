@@ -1,0 +1,87 @@
+
+<!--
+  // ********************************************************************
+  //
+  // HTML File for KKlabs' SPOT Beacon Lottery Sample 
+  // Author: Geoffrey Wang
+  //
+  //  This sample code is under Apache License, Version 2.0 , 
+  //    http://www.apache.org/licenses/LICENSE-2.0 
+  //
+  //  Please refer to http://www.spot.ms for detail of using SPOT Beacon.
+  //
+  //
+  // ********************************************************************
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Mobile App Meta-->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Site Properities -->
+  <title>lottery sample</title>
+
+  <!-- Javascript Lib: jQuery and plugins -->
+  <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+  <script src="jqfloat.min.js"></script>
+  
+  <!-- Javascript Lib: kklabs -->
+  <script src="viaduct_essential_lib.js"></script>
+  <script src="spot_jsbelib.js"></script>
+
+  <!-- Javascript Lib: porject -->
+  <script src="ls.js"></script>
+
+  <!-- Style Sheet: porject -->
+  <link rel="stylesheet" type="text/css" href="ls.css">
+  
+</head>
+<body>
+
+
+<!-- left content area -->
+<div id="mainArea" >
+
+    <div class="contentArea" id="mainTitle"></div>
+
+    <div class="contentArea" id="mainMessage"></div>
+
+    <div class="contentArea" id="ticketResult" style="display: none;"></div>
+    
+    <div class="contentArea" id="ticketResultText" width="250" height="250" style="display: none;"></div>
+
+    <canvas class="contentArea" id="ticketTop" width="220" height="180" style="display: none;"></canvas>
+
+</div>
+
+<div id="initArea" >
+  <div id="progress">
+    <i class="huge loading icon"></i>
+  </div>
+</div>
+
+<div id="plzRotateArea" >
+  <div id="progress">
+    <i class="huge repeat icon"></i>
+  </div>
+</div>
+
+<div id="loadingArea" >
+<i class="huge loading icon"></i>
+</div>
+
+    <audio preload="none" id="audioChannel01" style="display: none"> 
+    </audio>
+
+</body>
+
+</html>
