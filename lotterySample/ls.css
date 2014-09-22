@@ -80,6 +80,7 @@ body {
     overflow-x: hidden;
     width: 100vw;
     height: 100vh;
+    background-color: #15317E;
     background-image: url(img/bg.png);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
@@ -153,7 +154,6 @@ body {
 
 #ticketResult
 {
-  background-color: #15317E;
   background-image: url(img/lottery.png);
   background-repeat: no-repeat;
   left: 5%;
