@@ -49,8 +49,8 @@ var userDataDefault =
 
   function clearUserData()
   {
-      window.localStorage.clear(); 
       userData = userDataDefault;
+      window.localStorage.setItem(localStorageName, JSON.stringify(userData));
   }
 
 

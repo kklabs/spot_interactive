@@ -2,17 +2,11 @@
 
   /* **************************************************************************
 
-  //
-  // CSS File for KKlabs' SPOT Beacon Lottery Sample 
+  // CSS for readmoolove Project
   // Author: Geoffrey Wang
-  //
-  //  This sample code is under Apache License, Version 2.0 , 
-  //    http://www.apache.org/licenses/LICENSE-2.0 
-  //
-  //  Please refer to http://www.spot.ms for detail of using SPOT Beacon.
-  //
+
 		
- ************************************************************************** */
+   ************************************************************************** */
 
  /* ************************************************************************** */
  /*
@@ -105,7 +99,7 @@ body {
 #mainMessage
 {
   position: absolute;
-  background-image: url(img/instruction.png);
+  background-image: url(img/helicopter.png);
   background-repeat: no-repeat;
   height: 245px;
   width: 244px;
@@ -159,6 +153,7 @@ body {
 
 #ticketResult
 {
+  background-color: #15317E;
   background-image: url(img/lottery.png);
   background-repeat: no-repeat;
   left: 5%;
@@ -171,13 +166,14 @@ body {
 #ticketResultText
 {
   padding: 15px;
-  color: white;
+  color: #E5E4E2;
 }
 
 #ticketResultText h2
 {
   margin: 0em 0em 0.1em 0em;
   font-size: 3.5em;
+  
 }
 
 #ticketResultText p
@@ -207,7 +203,7 @@ body {
   left:0;
   right:0;
   bottom:0;
-  background-color:#000; 
+  background-color:#fff; 
   z-index:9999; 
 }
 
