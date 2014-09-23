@@ -216,7 +216,7 @@ var userDataDefault =
 
         if( (beaconData[j].px==1 || beaconData[j].px==2 || beaconData[j].px==3 ) )
         {
-            if(beaconData[j].name=="lotteryInArea")
+            if(beaconData[j].name=="lotteryInArea" || beaconData[j].name=="demo iron man")
             {
               fgReceivedFlying=true;
             }
@@ -228,7 +228,7 @@ var userDataDefault =
         }
         else if (beaconData[j].px==0 )
         {
-            if(beaconData[j].name=="lotteryInArea")
+            if(beaconData[j].name=="lotteryInArea" || beaconData[j].name=="demo iron man")
             {
               fgReceivedFlying=false;
             }
