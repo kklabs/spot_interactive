@@ -216,26 +216,11 @@ var userDataDefault =
 
         if( (beaconData[j].px==1 || beaconData[j].px==2 || beaconData[j].px==3 ) )
         {
-            if(beaconData[j].name=="lotteryInArea" || beaconData[j].name=="demo iron man")
-            {
-              fgReceivedFlying=true;
-            }
-            else if(beaconData[j].name=="lotteryStopArea")
-            {
-              fgReceivedStopArea=true;
-            }
-            
+            fgReceivedFlying=true;
         }
         else if (beaconData[j].px==0 )
         {
-            if(beaconData[j].name=="lotteryInArea" || beaconData[j].name=="demo iron man")
-            {
-              fgReceivedFlying=false;
-            }
-            else if(beaconData[j].name=="lotteryStopArea")
-            {
-              fgReceivedStopArea=false;
-            }
+            fgReceivedFlying=false;
         }
 
     }
