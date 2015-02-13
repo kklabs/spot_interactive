@@ -230,6 +230,9 @@ var userDataDefault =
 
   });
 
+  beaconManager.onCustomUserIdReceived(function(uid) { 
+    console.log("get uid="+uid);
+  });
 
   // ** ticket recover: not for public users
 
@@ -482,7 +485,7 @@ var userDataDefault =
   $( window ).ready(function() {
 
       // disable all log for production 
-      
+      /*
       window.console = {
         log   : function(){},
         dir   : function(){},
@@ -490,7 +493,7 @@ var userDataDefault =
         error : function(){},
         warn  : function(){}
       };
-
+      */
       // start to minitor orientation change (workaround for iOS no detection in iFrame)
       lastScreenWidth=$(window).width();
       setTimeout(orientModeMonitor,1000);
